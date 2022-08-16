@@ -32,12 +32,13 @@ then
 	echo 'No JSON files to prettify'
 else
 	echo 'All JSON files were prettified before commit'
-	echo "$FLS"
-	cat "$FLS"
+	# remove trailing whitespace characters
+	FLS="${FLS%"${FLS##*[![:space:]]}"}" 
+	#stage all prettified files before commit
 	git add "$FLS"
 fi
 
-# Remove to run default pre commit script
+# Comment next line to run git default pre commit script
 exit 0
 
 if git rev-parse --verify HEAD >/dev/null 2>&1
