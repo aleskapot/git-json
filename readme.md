@@ -1,4 +1,4 @@
-## JSON structure change tolerant Windoes git repository
+## JSON structure change tolerant Windows git repository
 
 ### Installation
 Replace with `git-files` folder files in your project `.git` folder. Script `pre-commit` should be placed in `./.git/hooks`.
